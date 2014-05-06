@@ -5,8 +5,9 @@ from setuptools import setup
 
 setup(
     name='django-email-helper',
-    version = '0.1.1',
+    version = '0.2',
     packages = ['email_helper'],
+    include_package_data = True,
     author = 'Yuri Lya',
     author_email = 'yuri.lya@fogstream.ru',
     url = 'https://bitbucket.org/fogstream/django-email-helper',
