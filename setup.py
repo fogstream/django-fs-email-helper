@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='django-email-helper',
-    version = '0.1',
+    version = '0.1.1',
     packages = ['email_helper'],
     author = 'Yuri Lya',
     author_email = 'yuri.lya@fogstream.ru',
