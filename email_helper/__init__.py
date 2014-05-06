@@ -1,7 +1,5 @@
 # coding=utf-8
 
-__version__ = '0.1'
-
 from os.path import basename
 from smtplib import SMTPException
 
