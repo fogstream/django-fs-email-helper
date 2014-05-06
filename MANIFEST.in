@@ -1,2 +1,2 @@
 include *.txt
-recursive-include email_helper *.txt
+recursive-include email_helper *
