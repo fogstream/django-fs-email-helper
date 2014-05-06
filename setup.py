@@ -9,8 +9,6 @@ setup(
     packages = ['email_helper'],
     author = 'Yuri Lya',
     author_email = 'yuri.lya@fogstream.ru',
-    maintainer = 'Fogstream LLC',
-    maintainer_email = 'org@fogstream.ru',
     url = 'https://bitbucket.org/fogstream/django-email-helper',
     license = 'The MIT License (MIT)',
     description = 'The Django-related reusable app provides the ability to send multipart emails and store them in a database.',
