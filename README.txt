@@ -3,6 +3,8 @@ Introduction
 
 fogstream-email-helper is the Django-related reusable app provides the ability to send multipart emails and store them in a database.
 
+The distinctive feature of this app is storing sent emails in database. It means that you have ability to check each sent email from admin interface.
+
 
 Installation
 ============
@@ -23,6 +25,8 @@ Installation
 Usage
 =====
 
-There are only one function for sending email in the ``email_helper`` module:
+Just import ``send_email`` function and use it::
 
-  * ``send_email``
+    from email_helper import send_email
+    send_email('from_email@example.com', 'to_email@example.com', 'email_helper/email_template.html', {})
+    send_email('from_email@example.com', ['to_email_1@example.com', 'to_email_2@example.com'], 'email_helper/email_template.html', {})
