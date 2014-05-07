@@ -4,13 +4,13 @@ from setuptools import setup
 
 
 setup(
-    name='django-email-helper',
-    version = '0.2',
+    name='fogstream-email-helper',
+    version = '0.1',
     packages = ['email_helper'],
     include_package_data = True,
     author = 'Yuri Lya',
     author_email = 'yuri.lya@fogstream.ru',
-    url = 'https://bitbucket.org/fogstream/django-email-helper',
+    url = 'https://bitbucket.org/fogstream/fogstream-email-helper',
     license = 'The MIT License (MIT)',
     description = 'The Django-related reusable app provides the ability to send multipart emails and store them in a database.',
     long_description = open('README.txt').read(),

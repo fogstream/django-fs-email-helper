@@ -1,17 +1,15 @@
 Introduction
 ============
 
-django-email-helper is the Django-related reusable app provides the ability to send multipart emails and store them in a database.
+fogstream-email-helper is the Django-related reusable app provides the ability to send multipart emails and store them in a database.
 
 
 Installation
 ============
 
-1. Install django-email-helper using ``pip`` or ``easy_install``::
+1. Install ``fogstream-email-helper`` using ``pip``::
 
-    $ pip install django-email-helper
-    or
-    $ easy_install django-email-helper
+    $ pip install fogstream-email-helper
 
 2. Add the ``'email_helper'`` application to the ``INSTALLED_APPS`` setting of your Django project ``settings.py`` file::
 
