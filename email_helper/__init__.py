@@ -2,6 +2,7 @@
 
 from os.path import basename
 from smtplib import SMTPException
+from html2text import html2text
 
 from django.template import loader, Context
 from django.core.mail import EmailMultiAlternatives
@@ -14,8 +15,10 @@ def send_email(addr_from, addr_to, subject, template, context, attachments=None,
     if not hasattr(addr_to, '__iter__'):
         addr_to = [addr_to]
 
-    body = loader.get_template(template).render(Context(context))
-    alternatives_parts = [(body, 'text/html')]
+    body_html = loader.get_template(template).render(Context(context))
+    alternatives_parts = [(body_html, 'text/html')]
+
+    body_txt = html2text(body_html)
 
     # Load attachments and create name/data tuples.
     attachments_parts = []
@@ -29,7 +32,7 @@ def send_email(addr_from, addr_to, subject, template, context, attachments=None,
 
     headers = reply_to and {'Reply-To': reply_to}
 
-    msg = EmailMultiAlternatives(subject=subject, body='None', from_email=addr_from, to=addr_to, alternatives=alternatives_parts, attachments=attachments_parts, headers=headers)
+    msg = EmailMultiAlternatives(subject=subject, body=body_txt, from_email=addr_from, to=addr_to, alternatives=alternatives_parts, attachments=attachments_parts, headers=headers)
 
     try:
         msg.send()
@@ -38,4 +41,4 @@ def send_email(addr_from, addr_to, subject, template, context, attachments=None,
     else:
         status = u'OK'
 
-    Email.objects.create(whom=u', '.join(addr_to), subject=subject, body=body, status=status)
+    Email.objects.create(whom=u', '.join(addr_to), subject=subject, body=body_html, status=status)
