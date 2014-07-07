@@ -13,13 +13,21 @@ Installation
 
     $ pip install django-fs-email-helper
 
-2. Add the ``'email_helper'`` application to the ``INSTALLED_APPS`` setting of your Django project ``settings.py`` file::
+2. Add ``'email_helper'`` to your ``INSTALLED_APPS`` setting::
 
     INSTALLED_APPS = (
         ...
         'email_helper',
         ...
     )
+
+3. Run ``syncdb`` or ``migrate``::
+
+    $ ./manage.py syncdb
+
+    or
+
+    $ ./manage.py migrate
 
 
 Usage
@@ -28,7 +36,9 @@ Usage
 Just import ``send_email`` function and use it::
 
     from email_helper import send_email
+
     send_email('from_email@example.com', 'to_email@example.com', 'email_helper/email_template.html', {})
+
     send_email('from_email@example.com', ['to_email_1@example.com', 'to_email_2@example.com'], 'email_helper/email_template.html', {})
 
 
