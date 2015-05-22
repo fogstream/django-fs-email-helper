@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import datetime
+from south.utils import datetime_utils as datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
         # Adding model 'Email'
         db.create_table(u'email_helper_email', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('when', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2014, 5, 5, 0, 0))),
+            ('when', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
             ('whom', self.gf('django.db.models.fields.CharField')(max_length=254)),
             ('subject', self.gf('django.db.models.fields.CharField')(max_length=254)),
             ('body', self.gf('django.db.models.fields.TextField')()),
@@ -32,7 +32,7 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'status': ('django.db.models.fields.CharField', [], {'max_length': '254'}),
             'subject': ('django.db.models.fields.CharField', [], {'max_length': '254'}),
-            'when': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 5, 5, 0, 0)'}),
+            'when': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'whom': ('django.db.models.fields.CharField', [], {'max_length': '254'})
         }
     }
