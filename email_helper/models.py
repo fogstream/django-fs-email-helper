@@ -2,11 +2,10 @@
 
 from django.db import models
 from django.utils.translation import ugettext, ugettext_lazy as _
-from django.utils import timezone
 
 
 class Email(models.Model):
-    when = models.DateTimeField(verbose_name=_(u'when'), default=timezone.now())
+    when = models.DateTimeField(verbose_name=_(u'when'), auto_now_add=True)
     whom = models.CharField(verbose_name=_(u'whom'), max_length=254)
     subject = models.CharField(verbose_name=_(u'subject'), max_length=254)
     body = models.TextField(verbose_name=_(u'body'))
