@@ -9,7 +9,7 @@ from email_helper.models import Email
 class EmailAdmin(admin.ModelAdmin):
     list_display = ['when', 'whom', 'subject', 'status']
     search_fields = ['whom', 'subject']
-    readonly_fields = ['_body']
+    readonly_fields = ['when', '_body']
     fieldsets = [
         [None, {'fields': ['when', 'whom', 'subject', 'status']}],
         [None, {'fields': ['_body']}],
